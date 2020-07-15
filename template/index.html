@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/app.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    </head>
+    <body>
+        <main>
+            <form>
+                <div class="form-group">
+                    <div class="user-checkbox">
+                        <input  type="checkbox" 
+                                id="user-input-unselected"
+                                name="user-input-unselected">
+                        <label  for="user-input-unselected" 
+                                class="emprunteur">
+                        unselected
+                        </label>
+                    </div>
+                    <div class="user-checkbox">
+                        <input  type="checkbox" 
+                                id="user-input-emprunteur"
+                                name="user-input-emprunteur">
+                        <label  for="user-input-emprunteur" 
+                                class="emprunteur">
+                                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                <span>emprunteur</span>
+                        </label>
+                    </div>
+                    <div class="user-checkbox">
+                        <input  type="checkbox" 
+                                id="user-input-coemprunteur"
+                                name="user-input-coemprunteur"
+                        >
+                        <label  for="user-input-coemprunteur" 
+                                class="coemprunteur">
+                                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                <span>co-emprunteur</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group form-input-wrap">
+                    <input type="text" name="name" id="name">
+                    <label for="name">
+                        Name :
+                    </label>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,125 @@
+@use '_mixins';
+
+@import 'colors';
+
+body{
+    background-color: $background;
+    padding: 1em;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    .form-group{
+        padding: 1em;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+%user-checkbox {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    & input{
+        display: none;
+    }
+
+    & label{
+        text-align: center;
+        color: white;
+        text-transform: uppercase;
+        cursor: pointer;
+        user-select: none;
+        padding: 0.8em;
+        width: 10em;
+        background-color: $background-user-checkbox;
+        & i{
+            display: block;
+            font-size: 1.5rem;
+        }
+        & span{
+            margin-top: 0.3em;
+            display: block;
+        }
+    }
+}
+
+
+.user-checkbox{
+    @extend %user-checkbox;
+    input:checked + label.emprunteur{
+        background-color: $background-user-checkbox-emprunteur;
+        box-shadow: 2px 2px 5px darken($background-user-checkbox-emprunteur, 20);
+    }
+    input:checked + label.coemprunteur{
+        background-color: $background-user-checkbox-coemprunteur;
+        box-shadow: 2px 2px 5px darken($background-user-checkbox-coemprunteur, 20);
+    }
+}
+
+%user-radio {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    & input{
+        display: none;
+        transition: transform 100000ms;
+    }
+    
+    & label{
+        text-align: center;
+        color: white;
+        text-transform: uppercase;
+        cursor: pointer;
+        user-select: none;
+        padding: 0.8em;
+        width: 10em;
+        background-color: $background-user-checkbox;
+        & i{
+            display: block;
+            font-size: 1.5rem;
+        }
+        & span{
+            margin-top: 0.3em;
+            display: block;
+        }
+        &:hover{
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+
+.user-radio{
+    @extend %user-radio;
+    input:checked + label.situation-immo{
+        background-color: $background-user-checkbox-coemprunteur;
+        box-shadow: 2px 2px 5px darken($background-user-checkbox-coemprunteur, 20);
+        transform: scale(1.1);
+        transition: all 200ms linear; 
+    }
+    input:not(:checked) + label.situation-immo{
+        transition: all 200ms linear; 
+    } 
+}
+
+.form-input-wrap{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    padding: 0.3em;
+    width: 250px;
+    input{
+        border:none;
+        &:focus{
+            outline:none;
+            padding: 0.1em;
+            font-size: 1.5rem;
+            display: inline-flex;
+            background-color: red;
+        } 
+        &:focus + label {
+            background-color: green;
+        }
+    }
+}
